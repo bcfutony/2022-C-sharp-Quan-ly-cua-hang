@@ -71,18 +71,25 @@ namespace QuanLyCuaHang
             //can kiem tra category da ton tai chua, neu co thi ko them nua            
             if (ListCategory != null && ListCategory.Count > 0)
             {                
+                bool dacoCate = false;
                 foreach (Category c in ListCategory)
                 {
                     //da co category nay
                    
-                    if (c.Name_Category != p.Name_Category)
+                    if (c.Name_Category.ToLower().Trim() == p.Name_Category.ToLower().Trim())
                     {
-                        cate.Name_Category = p.Name_Category;
-                        cate.Id_Category = GenerateID_Category();
-                        ListCategory.Add(cate);
+                        dacoCate = true;
                         break;
+                        
                     }
-                    //break;
+                    
+                }
+                if (!dacoCate)
+                {
+                    cate.Name_Category = p.Name_Category;
+                    cate.Id_Category = GenerateID_Category();
+                    ListCategory.Add(cate);
+                   
                 }
             }
 
