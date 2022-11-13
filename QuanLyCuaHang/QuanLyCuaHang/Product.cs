@@ -18,4 +18,12 @@ namespace QuanLyCuaHang
 
 
     }
+    class Category
+    {
+        public int Id_Category { get; set; }
+        public string Name_Category { get; set; }
+        //public Product[] dsProduct { get; set; }
+        //public List<Product> dsProducts { get; set; }
+        
+    }
 }

@@ -41,17 +41,17 @@ namespace QuanLyCuaHang
                 {
                     case 1:
                         Console.WriteLine("\n1. Them Category.");
-                        category_Manage.NhapCategory();
+                        product_Manage.NhapCategory();
                         Console.WriteLine("\nThem Category thanh cong!");
                         break;
                     case 2: 
-                        if (category_Manage.SoLuongCategory() > 0)
+                        if (product_Manage.SoLuongCategory() > 0)
                         {
                             Console.WriteLine("\n2. Cap nhat thong tin Category boi ID");
                             Console.Write("nhap Category_Id: ");
                             int id = Convert.ToInt32(Console.ReadLine());
                             //goi ham ham updateCategory()
-                            category_Manage.UpdateCategory(id);
+                            product_Manage.UpdateCategory(id);
 
                         } else
                         {
@@ -59,13 +59,13 @@ namespace QuanLyCuaHang
                         }                        
                         break;
                     case 3: //xoa category
-                        if (category_Manage.SoLuongCategory() > 0)
+                        if (product_Manage.SoLuongCategory() > 0)
                         {
                             Console.WriteLine("\n3. Xoa Category boi ID ");
                             Console.Write("nhap Category_Id: ");
                             int id = Convert.ToInt32(Console.ReadLine());
                             //goi ham ham DeleteCategory()
-                            category_Manage.DeleteCategory(id);                            
+                            product_Manage.DeleteCategory(id);                            
 
                         }
                         else
@@ -74,14 +74,14 @@ namespace QuanLyCuaHang
                         }
                         break;
                     case 4: //Tim kiem Category theo ten
-                        if (category_Manage.SoLuongCategory() > 0)
+                        if (product_Manage.SoLuongCategory() > 0)
                         {
                             Console.WriteLine("\n4. Tim kiem Category theo ten: ");
                             Console.Write("nhap ten Category can tim: ");
                             string name = Convert.ToString(Console.ReadLine());                                                        
                             //goi ham tim kiem
-                            List<Category> kq = category_Manage.FindByNameCategory(name);
-                            category_Manage.ShowCategory(kq);
+                            List<Category> kq = product_Manage.FindByNameCategory(name);
+                            product_Manage.ShowCategory(kq);
 
                         }
                         else
@@ -90,14 +90,14 @@ namespace QuanLyCuaHang
                         }
                         break;
                     case 5:
-                        if (category_Manage.SoLuongCategory() > 0)
+                        if (product_Manage.SoLuongCategory() > 0)
                         {
                             Console.WriteLine("\n5. Hien thi danh sach Category.");
-                            category_Manage.ShowCategory(category_Manage.getListCategory());
+                            product_Manage.ShowCategory(product_Manage.getListCategory());
                         }
                         else
                         {
-                            Console.WriteLine("\nSanh sach sinh vien trong!");
+                            Console.WriteLine("\nSanh sach Category trong!");
                         }
                         break;
                     case 6:
@@ -125,6 +125,37 @@ namespace QuanLyCuaHang
                             Console.WriteLine("\nDanh sach Category trong");
                         }                        
                         break;
+                    case 8: //xoa product
+                        if (product_Manage.SoLuongProduct() > 0)
+                        {
+                            Console.WriteLine("\n8. Xoa Product boi ID ");
+                            Console.Write("nhap Product_Id: ");
+                            int id = Convert.ToInt32(Console.ReadLine());
+                            
+                            //goi ham ham DeleteProduct()                            
+                            product_Manage.DeleteProduct(id);
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nDanh sach Category trong");
+                        }
+                        break;
+
+                    case 9: //tim kiem
+                        if (product_Manage.SoLuongProduct() > 0)
+                        {
+                            Console.WriteLine("\n9. Tim kiem Product theo ten: ");
+                            Console.Write("nhap ten Product can tim: ");
+                            string name = Convert.ToString(Console.ReadLine());
+                            List<Product> kq = product_Manage.FindByNameProduct(name);
+                            product_Manage.ShowProduct(kq);
+
+                        }                      
+                        else
+                        {
+                            Console.WriteLine("\nDanh sach Category trong");
+                        }
+                        break;                        
                     case 10: //show danh sach product
                         if (product_Manage.SoLuongProduct() > 0)
                         {

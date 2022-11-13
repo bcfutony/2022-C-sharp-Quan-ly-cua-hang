@@ -8,7 +8,7 @@ namespace QuanLyCuaHang
 {
     class Category_Manage
     {
-        
+
         //tao list category
 
         //private List<Category> ListCategory = null;
@@ -18,26 +18,11 @@ namespace QuanLyCuaHang
         //}
 
         List<Category> ListCategory = new List<Category>();
+        //List<Category> ListCategory;
 
-        /**
+        /*
          * Ham tao ID_Category tang dan
          */
-        //private int GenerateID_Category()
-        //{
-        //    int max = 1;
-        //    if (ListCategory != null && ListCategory.Count > 0)
-        //    {
-        //        max = ListCategory[0].Id_Category;
-        //        foreach (Category c in ListCategory)
-        //        {
-        //            if(max < c.Id_Category)
-        //                max = c.Id_Category;
-        //        }
-
-        //        max++;
-        //    }
-        //    return max;
-        //}
 
         public int GenerateID_Category()
         {

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace QuanLyCuaHang
 {
     //tao class Category gom cac thuoc tinh Id, Name
-    internal class Category
-    {
-        public int Id_Category { get; set; }
-        public string Name_Category { get; set; }
+    //internal class Category
+    //{
+    //    public int Id_Category { get; set; }
+    //    public string Name_Category { get; set; }
 
-    }
+    //}
 }
