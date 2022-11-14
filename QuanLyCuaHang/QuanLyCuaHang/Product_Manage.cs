@@ -47,7 +47,6 @@ namespace QuanLyCuaHang
             Product p = new Product();  
             Category cate = new Category();
 
-
             p.Id_Product = GenerateID_Product();
 
             Console.Write("nhap ten Product moi: ");
@@ -78,9 +77,7 @@ namespace QuanLyCuaHang
                    
                     if (c.Name_Category.ToLower().Trim() == p.Name_Category.ToLower().Trim())
                     {
-                        dacoCate = true;
-                        break;
-                        
+                        dacoCate = true;           
                     }
                     
                 }
@@ -92,14 +89,9 @@ namespace QuanLyCuaHang
                    
                 }
             }
-
-           
-
-
-
+            
             //them product moi vao ListProduct
-            ListProduct.Add(p);
-           
+            ListProduct.Add(p);           
             
         }
         public int SoLuongProduct()
@@ -147,7 +139,7 @@ namespace QuanLyCuaHang
             Product prod = FindProductByID(id);
             if (prod != null)
             {
-                Console.WriteLine("nhap ten Product MOI: ");
+                Console.Write("nhap ten Product MOI: ");
                 string name = Convert.ToString(Console.ReadLine());
                 if (name != null && name.Length > 0)
                 {
@@ -207,25 +199,7 @@ namespace QuanLyCuaHang
             }
             return kq;
         }
-        //public List<Category> FindByNameCategory(string name)
-        //{
-        //    List<Category> kq = new List<Category>();
-        //    if (ListCategory.Count > 0 && ListCategory != null)
-        //    {
-        //        foreach (Category c in ListCategory)
-        //        {
-        //            if (c.Name_Category.ToLower().Contains(name.ToLower()))
-        //            {
-        //                kq.Add(c);
-        //            }
-        //        }
-        //    }
-        //    return kq;
-        //}
-
-
-
-
+        
 
         public int GenerateID_Category()
         {
@@ -254,16 +228,40 @@ namespace QuanLyCuaHang
         {
             //khoi tao category moi
             Category cate = new Category();
-            //tao Id moi va gan vai Id_Category
-            cate.Id_Category = GenerateID_Category();
 
             //nhap ten Category moi
             Console.Write("Nhap ten Category: ");
             cate.Name_Category = Convert.ToString(Console.ReadLine());
 
-            //them category moi vao ListCategory
-            ListCategory.Add(cate);
+            //can kiem tra category da ton tai chua, neu co thi ko them nua            
+            if (ListCategory != null && ListCategory.Count > 0)
+            {
+                bool dacoCate = false;
+                foreach (Category c in ListCategory)
+                {
+                    //da co category nay
+                    if (c.Name_Category.ToLower().Trim() == cate.Name_Category.ToLower().Trim())
+                    {
+                        dacoCate = true;
+                        Console.WriteLine("Category da ton tai, vui long nhap ten khac: ");
+                    }
 
+                }
+                if (!dacoCate)
+                {
+                    //cate.Name_Category = p.Name_Category;
+                    cate.Id_Category = GenerateID_Category();
+                    ListCategory.Add(cate);
+                    Console.WriteLine("\nThem Category thanh cong!");
+
+                }
+            }
+            else
+            {
+                cate.Id_Category = GenerateID_Category();
+                ListCategory.Add(cate);
+                Console.WriteLine("\nThem Category thanh cong!");
+            }
         }
 
         public int SoLuongCategory()
@@ -304,7 +302,7 @@ namespace QuanLyCuaHang
             Category cate = FindCateByID(id);
             if (cate != null)
             {
-                Console.WriteLine("nhap ten Category MOI: ");
+                Console.Write("nhap ten Category MOI: ");
                 string name = Convert.ToString(Console.ReadLine());
                 if (name != null && name.Length > 0)
                 {

@@ -11,8 +11,8 @@ namespace QuanLyCuaHang
     {
         static void Main(string[] args)
         {
-            //
-            Category_Manage category_Manage = new Category_Manage();
+            
+            //Category_Manage category_Manage = new Category_Manage();
             Product_Manage product_Manage = new Product_Manage();
 
             while (true)
@@ -30,8 +30,6 @@ namespace QuanLyCuaHang
                 Console.WriteLine("**  8. Xoa Product boi ID.                           **");
                 Console.WriteLine("**  9. Tim kiem Product theo ten.                    **");
                 Console.WriteLine("**  10. Hien thi danh sach Product.                  **");
-
-
                 Console.WriteLine("**  0. Thoat                                         **");
                 Console.WriteLine("*******************************************************");
                 Console.Write("Nhap tuy chon: ");
@@ -42,7 +40,7 @@ namespace QuanLyCuaHang
                     case 1:
                         Console.WriteLine("\n1. Them Category.");
                         product_Manage.NhapCategory();
-                        Console.WriteLine("\nThem Category thanh cong!");
+                        
                         break;
                     case 2: 
                         if (product_Manage.SoLuongCategory() > 0)
@@ -179,14 +177,6 @@ namespace QuanLyCuaHang
             
 
 
-
-
-
-            //Console.WriteLine("Xin chao, do an");
-            ////Thêm, xóa, sửa và tìm kiếm các loại hàng. (5 điểm) Category
-            //Console.WriteLine("nhap Category moi");
-            //category_Manage.NhapCategory();
-            //Console.WriteLine("Da nhap Category thanh cong");
         }
     }
 }
