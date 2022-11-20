@@ -11,6 +11,7 @@ namespace QuanLyCuaHang
     {
         static void Main(string[] args)
         {
+            //tony teo
                         
             Product_Manage product_Manage = new Product_Manage();
 
